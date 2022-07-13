@@ -1,0 +1,53 @@
+.accordionArea {
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto;
+  li {
+    margin: 10px 0;
+  }
+  section {
+    border: 1px solid #ccc;
+  }
+}
+
+.title {
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 12px;
+    height: 1px;
+    background-color: black;
+    content: "";
+    transition: all 0.5s ease-in-out;
+  }
+  &::after {
+    transform: rotate(90deg);
+  }
+}
+
+.box {
+  display: none;
+  margin: 10px;
+  padding: 10px;
+  background-color: #80808047;
+}
+
+// アコーディオンが閉じた時
+.close {
+  .title {
+    &::before {
+      transform: rotate(135deg);
+    }
+    &::after {
+      transform: rotate(-135deg);
+    }
+  }
+}
